@@ -83,10 +83,12 @@ class Empleados extends ConexionPdo{
 
     public function insert_Empleados(){
         try {
-            $stm = $this-> dbCnx -> prepare("INSERT INTO Empleados(id_persona,usuario,password,id_constructora) VALUES (:idPers,:user,:pass,:idCons)");
+            $passwordHash = md5($this->password);
+            $sql = "INSERT INTO Empleados (id_persona, usuario, password, id_constructora) VALUES (:idPers, :user, :pass, :idCons)"; 
+            $stm = $this-> dbCnx -> prepare($sql);
             $stm->bindParam(":idPers",$this->id_persona);
             $stm->bindParam(":user",$this->usuario);
-            $stm->bindParam(":pass",MD5($this->password));
+            $stm->bindParam(":pass",$passwordHash);
             $stm->bindParam(":idCons",$this->id_constructora);
             $stm->execute();
         } catch (Exception $e) {

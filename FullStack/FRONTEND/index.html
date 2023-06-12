@@ -17,60 +17,118 @@
       crossorigin="anonymous"
       defer
     ></script>
+    <script src="./Empleados/Personas.js" type="module"></script>
+    <script src="./Empleados/Constructoras.js" type="module"></script>
+    <script src="./main.js" defer></script>
   </head>
   <body>
-    <nav
-      class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark"
-      data-bs-theme="dark"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Alquilartemis</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link text-light" href="#">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <button
-                class="btn btn-dark dropdown-toggle"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+    <div class="container-fluid bg-info">
+      <div class="row g-5">
+        <div class="col-12 pt-5 text-center">
+          <div class="d-flex justify-content-center align-items-center">
+            <h1>BIENVENIDOS</h1>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <form action="../BACKEND/Controllers/Login/Login.php" method="POST">
+              <div class="mb-3">
+                <label for="user" class="form-label">User Name</label>
+                <input
+                  type="text"
+                  id="user"
+                  name="usuario"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Contrasena" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  id="Contrasena"
+                  name="password"
+                  class="form-control"
+                />
+              </div>
+              <input
+                type="submit"
+                class="btn btn-primary"
+                value="Log In"
+                name="login"
+              />
+            </form>
+          </div>
+        </div>
+        <div class="col-12 pt-5 text-center">
+          <h2 class="text-center mt-3">Agregar Empleados</h2>
+          <form
+            class="mt-3"
+            action="../BACKEND/Controllers/Empleados/registrarEmpleado.php"
+            method="POST"
+          >
+            <div class="mb-3">
+              <label for="id_persona" class="form-label"
+                >Nombre del Empleado</label
               >
-                Personas
-              </button>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="./Personas/AgregarPersonas.html"
-                    >Agregar Personas</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./Personas/VerPersonas.html"
-                    >Ver Personas</a
-                  >
-                </li>
-                <li><a class="dropdown-item" href="#">Eliminar Personas</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light">Disabled</a>
-            </li>
-          </ul>
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                id="id_persona"
+                name="id_persona"
+                required
+              >
+                <option selected>Seleccione El nombre Del Empleado</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="id_constructora" class="form-label"
+                >Nombre de la Constructora</label
+              >
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                id="id_constructora"
+                name="id_constructora"
+                required
+              >
+                <option selected>
+                  Seleccione El nombre de la Constructora
+                </option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="usuario" class="form-label"
+                >Usuario del Empleado</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="usuario"
+                name="usuario"
+                placeholder="Inserte Usuario del Empleado"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label"
+                >Contraseña del Empleado</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Inserte Contraseña del Empleado"
+                required
+              />
+            </div>
+            <input
+              type="submit"
+              class="btn btn-primary"
+              value="Enviar"
+              name="registrar"
+            />
+          </form>
         </div>
       </div>
-    </nav>
+    </div>
   </body>
 </html>

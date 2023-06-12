@@ -14,7 +14,7 @@ CREATE TABLE Personas(
     id_persona INT NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(30) NOT NULL,
     telefono INT(20) NOT NULL,
-    sexo BOOLEAN NOT NULL,
+    sexo VARCHAR(29) NOT NULL,
     direccion VARCHAR(50) NOT NULL,
     PRIMARY KEY(id_persona)
 );
@@ -71,8 +71,14 @@ CREATE TABLE Cotizacion_Producto(
     FOREIGN KEY (id_producto) REFERENCES Productos(id_producto)
 );
 
+INSERT INTO Personas (nombre, telefono, sexo, direccion) 
+VALUES ('John Doe', 1234567890, 'Masculino', '123 Main Street');
+
 INSERT INTO Constructoras (nombre, direccion) 
 VALUES 
 ('Marval', 'Tv. 72 #35-198, Bucaramanga'),
 ('Incomesa', 'PARADOR ALTAMIRA, Piedecuesta Los Santos')
 ;
+
+INSERT INTO Empleados (id_persona, usuario, password, id_constructora) VALUES (1, 'Admin', '123', 1);
+
