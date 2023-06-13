@@ -1,18 +1,24 @@
 <?php
-if(isset($_POST["registrar"])){
+header("Content-Type: application/json");
+
+$jsonData = file_get_contents('php://input');
+
+$data = json_decode($jsonData, true);
+
+if(isset($data["registrar"])){
     require_once(__DIR__. "/../../Models/Personas.php");
 
     $personas = new Personas();
-    $personas->setNombre($_POST["nombre"]);
-    $personas->seTtelefono($_POST["telefono"]);
-    $personas->setSexo($_POST["sexo"]);
-    $personas->setDireccion($_POST["direccion"]);
+    $personas->setNombre($data["nombre"]);
+    $personas->setTelefono($data["telefono"]);
+    $personas->setSexo($data["sexo"]);
+    $personas->setDireccion($data["direccion"]);
 
     $personas->insert_Personas();
 
-    echo "
-    <script>
-    document.location='../../../FRONTEND/Personas/VerPersonas.html'
-    </script>";
+    // echo "
+    // <script>
+    // document.location='../../../FRONTEND/Personas/VerPersonas.html'
+    // </script>";
 }
 ?>

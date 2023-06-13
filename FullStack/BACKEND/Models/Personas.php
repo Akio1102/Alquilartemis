@@ -49,7 +49,7 @@ class Personas extends ConexionPdo{
         $this->nombre =$nombre;
     }
 
-    public function seTtelefono($telefono){
+    public function setTelefono($telefono){
         $this->telefono =$telefono;
     }
 
