@@ -1,10 +1,10 @@
 const headers = new Headers({ "Content-Type": "application/json" });
-const URL = `http://localhost/Alquilartemis/FullStack/BACKEND/Controllers`;
+const URL = `http://localhost/Alquilartemis/FullStack/BACKEND/Controllers/Point.php?`;
 
 // Geters
 export const GETPersonas = async () => {
   try {
-    const result = await fetch(`${URL}/Personas/getPersonas.php`);
+    const result = await fetch(`${URL}personas=GetPersonas`);
     const datos = await result.json();
     return datos;
   } catch (error) {
@@ -39,7 +39,7 @@ export async function POSTPersonas(event) {
     body: JSON.stringify(event),
   };
   try {
-    let peticion = await fetch(`${URL}/Personas/registrarPersonas.php`, config);
+    let peticion = await fetch(`${URL}personas=PostPersonas`, config);
     datos = await peticion.json();
   } catch (error) {
     console.log(error);
