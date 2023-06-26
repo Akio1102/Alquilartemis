@@ -23,7 +23,7 @@
     ></script>
     <script src="./main.js" type="module"></script>
   </head>
-  <body>
+  <body class="bg-dark">
     <nav
       class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark"
       data-bs-theme="dark"
@@ -98,47 +98,241 @@
         </div>
       </div>
     </nav>
-    <div class="container fluid">
-      <div
-        class="btn-group"
-        role="group"
-        aria-label="Button group with nested dropdown"
-      >
-        <div class="btn-group" role="group">
-          <button
-            type="button"
-            class="btn btn-primary dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            id="Personas"
+
+    <div class="container-fluid overflow-auto">
+      <div class="col-12 mt-3">
+        <ul
+          class="nav nav-pills nav-justified mb-3"
+          id="pills-tab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Button group with nested dropdown"
+            >
+              <div class="btn-group" role="group">
+                <button
+                  type="button"
+                  class="btn btn-primary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  id="Personas"
+                >
+                  Personas
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <button
+                      class="btn"
+                      title="Boton de Personas"
+                      id="addPersonas"
+                    >
+                      <i class="bi bi-person-circle"></i> Agregar Personas
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item" role="presentation">
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Button group with nested dropdown"
+            >
+              <div class="btn-group" role="group">
+                <button
+                  type="button"
+                  class="btn btn-primary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  id="Empleados"
+                >
+                  Empleados
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <button
+                      class="btn"
+                      title="Boton de Empleados"
+                      id="addEmpleados"
+                    >
+                      <i class="bi bi-person-circle"></i> Agregar Empleados
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item" role="presentation">
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Button group with nested dropdown"
+            >
+              <div class="btn-group" role="group">
+                <button
+                  type="button"
+                  class="btn btn-primary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  id="Clientes"
+                >
+                  Clientes
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <button
+                      class="btn"
+                      title="Boton de Clientes"
+                      id="addClientes"
+                    >
+                      <i class="bi bi-person-circle"></i> Agregar Clientes
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item" role="presentation">
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Button group with nested dropdown"
+            >
+              <div class="btn-group" role="group">
+                <button
+                  type="button"
+                  class="btn btn-primary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  id="Cotizaciones"
+                >
+                  Cotizaciones
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <button
+                      class="btn"
+                      title="Boton de Cotizaciones"
+                      id="addCotizaciones"
+                    >
+                      <i class="bi bi-receipt"></i> Agregar Cotizaciones
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item" role="presentation">
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Button group with nested dropdown"
+            >
+              <div class="btn-group" role="group">
+                <button
+                  type="button"
+                  class="btn btn-primary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  id="Contructoras"
+                >
+                  Contructoras
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <button
+                      class="btn"
+                      title="Boton de Contructoras"
+                      id="addContructoras"
+                    >
+                      <i class="bi bi-building"></i> Agregar Contructoras
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item" role="presentation">
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Button group with nested dropdown"
+            >
+              <div class="btn-group" role="group">
+                <button
+                  type="button"
+                  class="btn btn-primary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  id="CotizacionProducto"
+                >
+                  Cotizacion Producto
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <button
+                      class="btn"
+                      title="Boton de Cotizacion Producto"
+                      id="addCotizacionProducto"
+                    >
+                      <i class="bi bi-receipt-cutoff"></i> Agregar Cotizacion
+                      Producto
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item" role="presentation">
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Button group with nested dropdown"
+            >
+              <div class="btn-group" role="group">
+                <button
+                  type="button"
+                  class="btn btn-primary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  id="Productos"
+                >
+                  Productos
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <button
+                      class="btn"
+                      title="Boton de Productos"
+                      id="addProductos"
+                    >
+                      <i class="bi bi-cart-plus"></i> Agregar Productos
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <!-- Container -->
+        <div class="tab-content" id="pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="pills-container"
+            role="tabpanel"
+            aria-labelledby="pills-container-tab"
+            tabindex="0"
           >
-            Personas
-          </button>
-          <ul class="dropdown-menu">
-            <li>
-              <button class="btn" title="Boton de Categorias" id="addPersonas">
-                <i class="bi bi-person-circle"></i> Agregar Personas
-              </button>
-            </li>
-          </ul>
+            <div class="card">
+              <div class="card p-4 bg-dark" id="container"></div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="container-fluid overflow-auto" id="container">
-      <!-- <table class="table table-hover mt-1">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Telefono</th>
-            <th scope="col">Sexo</th>
-            <th scope="col">Dirección</th>
-            <th scope="col">Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="tabla"></tbody>
-      </table> -->
     </div>
   </body>
 </html>

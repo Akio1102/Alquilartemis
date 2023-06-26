@@ -29,3 +29,18 @@ export const sendPersonas = async (e) => {
     console.log(error);
   }
 };
+
+export const deletePersona = async (e) => {
+  try {
+    let data = Object.fromEntries(new FormData(e.target));
+    console.log(data);
+    // if (data == false) {
+    //   console.log(`No Puede Enviar Datos Vacios Personas`);
+    // } else {
+    //   const datos = await DELETEPersonas(data);
+    //   console.log(datos);
+    // }
+  } catch (error) {
+    console.log(error);
+  }
+};

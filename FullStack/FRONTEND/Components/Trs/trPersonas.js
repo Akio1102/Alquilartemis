@@ -8,7 +8,7 @@ export function FilaPersonas(persona) {
         <td>${persona.sexo}</td>
         <td>${persona.direccion}</td>
         <td>
-          <button data-accion="editar"  class="btn btn-warning">
+          <button data-accion="editar" class="btn btn-warning" id="editPersonas" data-bs-toggle="modal" data-bs-target= "#modalPersonasEdit">
             <i class="bi bi-pencil-square"></i>
           </button> 
           <button data-accion="eliminar" class="btn btn-danger">
