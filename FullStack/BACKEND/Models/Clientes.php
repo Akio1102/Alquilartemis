@@ -1,80 +1,70 @@
 <?php
 
-require_once("Personas.php");
+require_once("Pdo.php");
 
-class Clientes extends Personas{
+class Clientes extends ConexionPdo{
     
-    protected $id_cliente;
-
-    public function __construct($id_cliente= 0){
-        $this->id_cliente = $id_cliente;
+    public function __construct(){
         parent::__construct();
     }
-    
-    //Getters
-    public function getId_cliente(){
-        return $this->id_cliente;
-    }
 
-    //Setters
-    public function setId_cliente($id_cliente){
-        $this->id_cliente =$id_cliente;
-    }
-
-    public function insert_Cliente(){
+    public function getAll_Clientes(){
         try {
-            $stm = $this-> dbCnx -> prepare("INSERT INTO Clientes(idetificador_persona) VALUES (:ide_perso)");
-            $stm->bindParam(":ide_perso",$this->id_persona);
+            $sql="SELECT * FROM Clientes";
+            $stm = $this-> dbCnx -> prepare($sql);
+            $stm -> execute();
+            return $stm -> fetchAll();
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function get_Cliente($id){
+        try {
+            $sql="SELECT * FROM Clientes WHERE id_cliente = :id";
+            $stm = $this-> dbCnx -> prepare($sql);
+            $stm->bindParam(":id",$id);
+            $stm -> execute();
+            return $stm -> fetchAll();
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function post_Cliente($idPersona){
+        try {
+            $sql="INSERT INTO Clientes(idetificador_persona) VALUES (:id_per)";
+            $stm = $this-> dbCnx -> prepare($sql);
+            $stm->bindParam(":id_per",$idPersona);;
             $stm->execute();
-        } catch (Exception $e) {
-            return $e->getMessage();
-        }
-    }
-
-    public function getAll_Cliente(){
-        try {
-            $stm = $this-> dbCnx -> prepare("SELECT * FROM Clientes");
-            $stm -> execute();
-            return $stm -> fetchAll();
+            return "Cliente Agregado";
         } catch (Exception $e) {
             return $e->getMessage();
         }
     }
     
-    public function delete_Cliente(){
-        try {
-            $stm = $this-> dbCnx -> prepare("DELETE FROM Clientes WHERE id_cliente = :id");
-            $stm->bindParam(":id",$this->id_cliente);
-            $stm -> execute();
-            return $stm -> fetchAll();
-        } catch (Exception $e) {
-            return $e->getMessage();
-        }
-    }
-    
-    public function selectOne(){
-        try {
-            $stm = $this-> dbCnx -> prepare("SELECT * FROM Clientes WHERE id_cliente = :id");
-            $stm->bindParam(":id",$this->id_cliente);
-            $stm -> execute();
-            return $stm -> fetchAll();
-        } catch (Exception $e) {
-            return $e->getMessage();
-        }
-    }
-
-    public function update_Cliente(){
+    public function put_Cliente($id,$idPersona){
         try {
             $stm = $this-> dbCnx -> prepare("UPDATE Clientes SET idetificador_persona=:id_per WHERE id_cliente = :id");
-            $stm->bindParam(":id",$this->id_cliente);
-            $stm->bindParam(":id_per",$this->id_persona);
+            $stm->bindParam(":id",$id);
+            $stm->bindParam(":id_per",$idPersona);
             $stm -> execute();
-            return $stm -> fetchAll();
+            return "Cliente Actualizado";
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function delete_Cliente($id){
+        try {
+            $sql="DELETE FROM Clientes WHERE id_cliente = :id";
+            $stm = $this-> dbCnx -> prepare();
+            $stm->bindParam(":id",$id);
+            $stm -> execute();
+            return "Cliente Eliminado";
         } catch (Exception $e) {
             return $e->getMessage();
         }
     }
 }
-$xd2 = new Clientes();
-print_r($xd2);
 ?>
